@@ -96,7 +96,7 @@ namespace PvPToggle
                             if (Main.player[player.Index].hostile) continue;
                             Main.player[player.Index].hostile = true;
                             NetMessage.SendData((int) PacketTypes.TogglePvp, -1, -1, NetworkText.Empty, player.Index);
-                            player.TSPlayer.SendWarningMessage("Your PvP has been forced on, don't try and turn it off!");
+                            player.TSPlayer.SendWarningMessage("Your PvP has been forced on, you are unable to turn it off!");
                             break;
                         case "bloodmoon":
                             if (Main.bloodMoon && !Main.dayTime)
@@ -318,7 +318,7 @@ namespace PvPToggle
         {
             if (args.Parameters.Count != 1)
             {
-                args.Player.SendErrorMessage("Incorrect syntax. Use /fpvp \"player's name\" or *");
+                args.Player.SendErrorMessage("Incorrect syntax. Use /fpvp \"player's name\" or */*off");
                 return;
             }
 
@@ -339,7 +339,7 @@ namespace PvPToggle
 
             if (plStr == "*" || plStr == "all")
             {
-                foreach (var pl in PvPplayer)
+                foreach (var pl in PvPplayer) 
                     pl.PvPType = "forceon";
                 TSPlayer.All.SendInfoMessage(string.Format("{0} has forced on everyone's PvP", args.Player.Name));
                 return;
