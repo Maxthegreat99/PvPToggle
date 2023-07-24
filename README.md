@@ -20,7 +20,7 @@ Gives ability to toggle player's PvP status
 - `team {team color}` - switches the sender's team to the parametered color.
 - `tteam {player name} {team color}` - switches the targeted player's team to the parametered color. requires the `pvp.team` perm.
 - `forcepvp/fpvp {player name/*/*off}` - toggles forcedPvp for the targeted player, `*` and `*off` can be used as parameter to respectively activate/deactivate forcedPvp for everyone, requires the `pvp.force` perm.
-- `bloodmoonpvp/bmpvp` - toggles wheather forcedpvp should be automatically activated for everyone on bloodmoons, requires the `pvp.moon` perm.
+- `bloodmoonpvp/bmpvp` - toggles wheather forcedPvp should be automatically activated for everyone on bloodmoons, requires the `pvp.moon` perm.
 
 ## How to Build
 1. Download the source code.
